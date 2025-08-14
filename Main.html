@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags for SEO and Responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags - Update these with your actual content -->
+    <title>Dan Deppert | Turning What's Next into What Works | TAM to Sales Engineering</title>
+    <meta name="description" content="Lead Technical Account Manager transitioning to Sales Engineering. 13+ years helping Fortune 500 companies achieve measurable outcomes. $45M portfolio, 97% retention, zero churn in final 2 years.">
+    <meta name="keywords" content="Dan Deppert, Sales Engineer, Solutions Engineer, Technical Account Manager, Enterprise Software, SaaS, Cloud Architecture, Customer Success, PowerShell Automation, Salesforce, Azure, AWS">
+    <meta name="author" content="Dan Deppert">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Dan Deppert - Turning What's Next into What Works">
+    <meta property="og:description" content="Lead TAM transitioning to Sales Engineering. 13+ years, $45M portfolio, zero churn. Building the bridge between emerging tech and enterprise value.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dandeppert.com">
+    <meta property="og:image" content="https://www.dandeppert.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dan Deppert - TAM to Sales Engineering">
+    <meta name="twitter:description" content="Turning What's Next into What Works. 13+ years enterprise success, now bringing customer expertise to pre-sales.">
+    <meta name="twitter:image" content="https://www.dandeppert.com/twitter-card.jpg">
+    
+    <!-- Favicon - Add your actual favicon files -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect to External Resources for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- 
+    CSS Architecture Notes:
+    - Using CSS Custom Properties (CSS Variables) for maintainable theming
+    - Mobile-first responsive design with min-width media queries
+    - BEM-style naming convention for better organization
+    - CSS Grid and Flexbox for modern layouts
+    - GPU-accelerated animations using transform and opacity
+    -->
+    <style>
+        /* ==========================================
+           CSS RESET & CUSTOM PROPERTIES
+           ========================================== */
+        
+        /* Modern CSS Reset - Removes browser inconsistencies */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Custom Properties (CSS Variables) for consistent theming */
+        :root {
+            /* Color System */
+            --primary: #0066ff;        /* Main brand color */
+            --primary-dark: #0052cc;   /* Darker variant for hover states */
+            --dark: #0a0e27;           /* Dark backgrounds */
+            --light: #f0f4ff;          /* Light backgrounds */
+            --accent: #00d4ff;         /* Accent color for highlights */
+            --text: #333333;           /* Main text color */
+            --text-light: #666666;     /* Secondary text color */
+            --white: #ffffff;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            --gradient-dark: linear-gradient(45deg, #0a0e27, #1a1f3a, #0a0e27);
+            
+            /* Spacing System (8px base) */
+            --space-xs: 0.5rem;   /* 8px */
+            --space-sm: 1rem;     /* 16px */
+            --space-md: 1.5rem;   /* 24px */
+            --space-lg: 2rem;     /* 32px */
+            --space-xl: 3rem;     /* 48px */
+            --space-2xl: 5rem;    /* 80px */
+            
+            /* Typography Scale */
+            --font-xs: 0.75rem;   /* 12px */
+            --font-sm: 0.875rem; /* 14px */
+            --font-base: 1rem;    /* 16px */
+            --font-lg: 1.25rem;   /* 20px */
+            --font-xl: 1.5rem;    /* 24px */
+            --font-2xl: 2rem;     /* 32px */
+            --font-3xl: 3rem;     /* 48px */
+            --font-4xl: 4rem;     /* 64px */
+            
+            /* Animation Timing */
+            --transition-fast: 150ms;
+            --transition-base: 300ms;
+            --transition-slow: 500ms;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 20px;
+            --radius-full: 50px;
+        }
+        
+        /* ==========================================
+           BASE STYLES
+           ========================================== */
+        
+        /* Smooth scrolling behavior for the entire page */
+        html {
+            scroll-behavior: smooth;
+            /* Prevent horizontal scroll on mobile */
+            overflow-x: hidden;
+        }
+        
+        body {
+            /* System font stack for optimal performance and native feel */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
+                        'Helvetica Neue', Arial, sans-serif;
+            font-size: var(--font-base);
+            line-height: 1.6;
+            color: var(--text);
+            background: #000;
+            /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            /* Enable smooth font rendering */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Semantic HTML5 elements display fix for older browsers */
+        main, section, nav, article, aside, header, footer {
+            display: block;
+        }
+        
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        
+        .hero {
+            position: relative;
+            min-height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Animated gradient background */
+            background: var(--gradient-dark);
+            background-size: 400% 400%;
+            /* Smooth gradient animation */
+            animation: gradientShift 15s ease infinite;
+            overflow: hidden;
+            /* Ensure text is readable on all devices */
+            padding: var(--space-lg);
+        }
+        
+        /* Gradient animation keyframes */
+        @keyframes gradientShift {
+            0%, 100% { 
+                background-position: 0% 50%; 
+            }
+            50% { 
+                background-position: 100% 50%; 
+            }
+        }
+        
+        /* Particle container for visual effects */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            /* Ensure particles don't interfere with content */
+            pointer-events: none;
+        }
+        
+        /* Individual particle styling */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            /* GPU-accelerated animation for better performance */
+            will-change: transform;
+            animation: float 20s infinite linear;
+        }
+        
+        /* Floating animation for particles */
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { 
+                opacity: 0.3; 
+            }
+            90% { 
+                opacity: 0.3; 
+            }
+            to {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Hero content container */
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensure content appears above particles */
+            text-align: center;
+            padding: var(--space-lg);
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        /* Main heading with gradient text effect */
+        .hero h1 {
+            /* Responsive font sizing using clamp() */
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            /* Gradient text effect */
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
+            /* Subtle glow animation */
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            /* Improve text rendering */
+            text-rendering: optimizeLegibility;
+        }
+        
+        /* Title glow animation */
+        @keyframes titleGlow {
+            from { 
+                filter: brightness(1); 
+            }
+            to { 
+                filter: brightness(1.2); 
+            }
+        }
+        
+        /* Tagline styling */
+        .hero .tagline {
+            font-size: var(--font-xl);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-lg);
+            font-weight: 300;
+        }
+        
+        /* Call-to-action button group */
+        .cta-group {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        
+        /* Base button styles */
+        .cta-button {
+            padding: var(--space-sm) calc(var(--space-lg) * 1.25);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-lg);
+            font-weight: 600;
+            cursor: pointer;
+            /* Smooth transitions for hover effects */
+            transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            /* Prevent text selection on buttons */
+            user-select: none;
+            /* Ensure touch targets are at least 44x44px for accessibility */
+            min-height: 44px;
+        }
+        
+        /* Primary CTA button */
+        .cta-primary {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        /* Secondary CTA button with glassmorphism effect */
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            /* Glassmorphism effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+        
+        /* ==========================================
+           METRICS SECTION
+           ========================================== */
+        
+        .metrics {
+            background: var(--white);
+            padding: var(--space-2xl) var(--space-lg);
+        }
+        
+        /* Responsive grid for metrics */
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            /* Auto-fit creates responsive columns */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        /* Individual metric card */
+        .metric-card {
+            text-align: center;
+            /* Initial state for animation */
+            opacity: 0;
+            transform: translateY(30px);
+            /* Staggered animation using CSS custom property */
+            animation: slideUp 0.6s forwards;
+            animation-delay: calc(var(--index) * 0.1s);
+        }
+        
+        /* Slide up animation */
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Large metric number */
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: var(--space-xs);
+            /* Tabular nums for consistent number width */
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Metric description */
+        .metric-label {
+            font-size: var(--font-lg);
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* ==========================================
+           PROJECTS SECTION
+           ========================================== */
+        
+        .projects {
+            background: var(--light);
+            padding: var(--space-2xl) var(--space-lg);
+        }
+        
+        .projects h2 {
+            text-align: center;
+            font-size: var(--font-3xl);
+            margin-bottom: var(--space-xl);
+            color: var(--dark);
+        }
+        
+        /* Responsive project grid */
+        .project-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        /* Project card with hover effects */
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            /* Smooth hover transition */
+            transition: all var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            /* Improve performance for animations */
+            will-change: transform;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+        }
+        
+        /* Project header with gradient background */
+        .project-header {
+            padding: var(--space-lg);
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated pulse effect on project header */
+        .project-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1); 
+            }
+            50% { 
+                transform: scale(1.1); 
+            }
+        }
+        
+        .project-title {
+            font-size: var(--font-xl);
+            color: var(--white);
+            margin-bottom: var(--space-xs);
+            position: relative; /* Ensure text appears above pulse effect */
+            z-index: 1;
+        }
+        
+        .project-category {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-body {
+            padding: var(--space-lg);
+        }
+        
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: var(--space-md);
+            line-height: 1.8;
+        }
+        
+        /* Technology tags */
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+        
+        .tech-tag {
+            padding: calc(var(--space-xs) * 0.6) var(--space-sm);
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-sm);
+            color: var(--primary);
+            font-weight: 600;
+            /* Subtle hover effect */
+            transition: background-color var(--transition-fast);
+        }
+        
+        .tech-tag:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        /* ==========================================
+           SKILLS SECTION
+           ========================================== */
+        
+        .skills {
+            background: var(--white);
+            padding: var(--space-2xl) var(--space-lg);
+        }
+        
+        .skills h2 {
+            text-align: center;
+            font-size: var(--font-3xl);
+            margin-bottom: var(--space-xl);
+            color: var(--dark);
+        }
+        
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .skill-category {
+            background: var(--light);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base) ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-lg);
+        }
+        
+        .skill-item {
+            margin-bottom: calc(var(--space-sm) * 1.2);
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        /* Skill progress bar container */
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Animated skill progress fill */
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 10px;
+            width: 0;
+            /* Staggered animation */
+            animation: fillBar 2s ease-out forwards;
+            animation-delay: calc(var(--index) * 0.1s);
+            /* GPU acceleration */
+            will-change: width;
+        }
+        
+        /* Progress bar fill animation */
+        @keyframes fillBar {
+            to { 
+                width: var(--width); 
+            }
+        }
+        
+        /* ==========================================
+           CONTACT SECTION
+           ========================================== */
+        
+        .contact {
+            background: var(--dark);
+            color: var(--white);
+            padding: var(--space-2xl) var(--space-lg);
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: var(--font-3xl);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .contact p {
+            font-size: var(--font-lg);
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            padding: var(--space-sm) var(--space-lg);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            color: var(--white);
+            text-decoration: none;
+            transition: all var(--transition-base) ease;
+            font-weight: 600;
+            /* Ensure touch targets meet accessibility standards */
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .contact-link:hover,
+        .contact-link:focus {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            /* Add focus outline for accessibility */
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* ==========================================
+           RESPONSIVE DESIGN
+           Mobile-first approach with min-width queries
+           ========================================== */
+        
+        /* Tablet and smaller screens */
+        @media (max-width: 768px) {
+            /* Adjust typography scale for mobile */
+            :root {
+                --font-3xl: 2.5rem;
+                --font-2xl: 1.75rem;
+                --font-xl: 1.25rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            /* Stack project cards on mobile */
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* 2x2 grid for metrics on mobile */
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-lg);
+            }
+            
+            /* Smaller metric numbers on mobile */
+            .metric-number {
+                font-size: 2.5rem;
+            }
+            
+            /* Stack CTA buttons on very small screens */
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        /* Large screens and desktops */
+        @media (min-width: 1200px) {
+            /* Increase max widths for better use of space */
+            .hero-content {
+                max-width: 1100px;
+            }
+            
+            .metrics-grid,
+            .project-grid {
+                max-width: 1400px;
+            }
+        }
+        
+        /* ==========================================
+           ACCESSIBILITY IMPROVEMENTS
+           ========================================== */
+        
+        /* Focus styles for keyboard navigation */
+        *:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Remove focus outline for mouse users */
+        *:focus:not(:focus-visible) {
+            outline: none;
+        }
+        
+        /* Ensure links are distinguishable */
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        a:hover,
+        a:focus {
+            color: var(--primary-dark);
+        }
+        
+        /* Skip to main content link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-sm);
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* ==========================================
+           PRINT STYLES
+           Optimized for printing/PDF generation
+           ========================================== */
+        
+        @media print {
+            /* Remove background colors and shadows for printing */
+            * {
+                background: transparent !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            
+            /* Ensure links are visible when printed */
+            a,
+            a:visited {
+                text-decoration: underline;
+            }
+            
+            /* Show URLs after links */
+            a[href]:after {
+                content: " (" attr(href) ")";
+            }
+            
+            /* Page breaks */
+            .hero,
+            .metrics,
+            .projects,
+            .skills {
+                page-break-after: always;
+            }
+            
+            /* Hide decorative elements */
+            .particles,
+            .project-header::after {
+                display: none;
+            }
+        }
+        
+        /* ==========================================
+           PERFORMANCE OPTIMIZATIONS
+           ========================================== */
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            /* You could add dark mode overrides here if needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Main content wrapper -->
+    <main id="main">
+        <!-- 
+        HERO SECTION
+        This is your landing area - the first thing visitors see.
+        The animated background and particles create visual interest
+        without overwhelming the content.
+        -->
+        <section class="hero" role="banner" aria-label="Introduction">
+            <!-- Particle container - populated by JavaScript -->
+            <div class="particles" id="particles" aria-hidden="true"></div>
+            
+            <!-- Main hero content -->
+            <div class="hero-content">
+                <h1>Dan Deppert</h1>
+                <p class="tagline">Turning What's Next into What Works</p>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-top: 0.5rem;">
+                    Lead TAM → Sales Engineering | 13+ Years Enterprise Success
+                </p>
+                
+                <!-- Call-to-action buttons -->
+                <div class="cta-group" role="group" aria-label="Main actions">
+                    <a href="#projects" class="cta-button cta-primary" aria-label="View my work and projects">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="cta-button cta-secondary" aria-label="Get in touch">
+                        Let's Connect
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+        METRICS SECTION
+        Displays key achievements with animated counters.
+        The numbers animate when scrolled into view using Intersection Observer.
+        -->
+        <section class="metrics" aria-label="Key achievements">
+            <div class="metrics-grid">
+                <!-- Each metric card has a CSS variable for animation delay -->
+                <div class="metric-card" style="--index: 0">
+                    <span class="metric-number" data-target="45" aria-label="45 million dollars">$45M</span>
+                    <span class="metric-label">Enterprise Portfolio Managed</span>
+                </div>
+                <div class="metric-card" style="--index: 1">
+                    <span class="metric-number" data-target="1400" aria-label="1400 plus">1,400+</span>
+                    <span class="metric-label">Hours Saved Annually</span>
+                </div>
+                <div class="metric-card" style="--index: 2">
+                    <span class="metric-number" data-target="97" aria-label="97 percent">97%</span>
+                    <span class="metric-label">Retention (Zero Churn 2 Years)</span>
+                </div>
+                <div class="metric-card" style="--index: 3">
+                    <span class="metric-number" data-target="86" aria-label="86 percent">86%</span>
+                    <span class="metric-label">Case Closure Time Reduction</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+        PROJECTS SECTION
+        Showcases your work with interactive cards.
+        Each card has hover effects and displays technologies used.
+        -->
+        <section class="projects" id="projects" aria-label="Portfolio projects">
+            <h2>Turning What's Next into What Works</h2>
+            <div class="project-grid">
+                <!-- Project 1: Autara AI Assistant -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">Autara AI Assistant</h3>
+                        <p class="project-category">AI-Powered Sales Enablement (2025)</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Building AI-powered customer success tool using OpenAI GPT-4o for automated 
+                            success plan generation, meeting summarization, and health monitoring. Enables 
+                            sales teams to deliver personalized technical demos at scale.
+                        </p>
+                        <!-- Technology tags -->
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">FastAPI</span>
+                            <span class="tech-tag" role="listitem">Next.js</span>
+                            <span class="tech-tag" role="listitem">OpenAI GPT-4o</span>
+                            <span class="tech-tag" role="listitem">TypeScript</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 2: FocusBot -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">FocusBot - Live AI Productivity Tool</h3>
+                        <p class="project-category">autara-focusbot-1.streamlit.app</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Deployed AI task-prioritization assistant improving team productivity by 25%. 
+                            Live application demonstrating practical AI implementation for enterprise 
+                            workflow optimization.
+                        </p>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Streamlit</span>
+                            <span class="tech-tag" role="listitem">Python</span>
+                            <span class="tech-tag" role="listitem">AI/ML</span>
+                            <span class="tech-tag" role="listitem">Cloud Deployment</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 3: Enterprise Automation Platform -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">Fortune 100 Automation Initiative</h3>
+                        <p class="project-category">Salesforce & RMA Process Transformation</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Architected Salesforce/API automation reducing case closure from 2 weeks to 
+                            2 days (86% improvement). Saved 1,400+ hours annually across 1,000+ RMA 
+                            cases with 95% reduction in engineer engagement.
+                        </p>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Salesforce</span>
+                            <span class="tech-tag" role="listitem">PowerShell</span>
+                            <span class="tech-tag" role="listitem">REST APIs</span>
+                            <span class="tech-tag" role="listitem">Process Automation</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 4: NetScaler Adoption -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">NetScaler Console Enhancement</h3>
+                        <p class="project-category">Fortune 500 Healthcare Client</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Drove 25% platform adoption increase through targeted training and automation. 
+                            Reduced upgrade cycles by 50% using custom adoption playbooks and proactive 
+                            enablement strategies.
+                        </p>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Citrix NetScaler</span>
+                            <span class="tech-tag" role="listitem">Enterprise Training</span>
+                            <span class="tech-tag" role="listitem">Automation</span>
+                            <span class="tech-tag" role="listitem">Healthcare Compliance</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 5: Premium Services Leadership -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">Premium Services Global Lead</h3>
+                        <p class="project-category">Strategic Account Leadership</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Selected as POC for Premium Services pilot (2017), promoted to Global Lead 
+                            (July 2019). Built and led team of 4 TAMs across US, APAC, EMEA achieving 
+                            100% goal attainment with zero churn in final 2 years.
+                        </p>
+                        <div class="project-tech" role="list" aria-label="Skills applied">
+                            <span class="tech-tag" role="listitem">Global Leadership</span>
+                            <span class="tech-tag" role="listitem">Team Development</span>
+                            <span class="tech-tag" role="listitem">Strategic Planning</span>
+                            <span class="tech-tag" role="listitem">Customer Success</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Project 6: Microsoft One Store -->
+                <article class="project-card" role="article">
+                    <div class="project-header">
+                        <h3 class="project-title">Microsoft One Store Operations</h3>
+                        <p class="project-category">IT Operations Center Leadership</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Led 14-member analyst team maintaining 99.9% uptime SLA. Built 6-VM training 
+                            infrastructure reducing incident resolution by 25%. Created PowerShell automation 
+                            reducing customer complaints by 90%.
+                        </p>
+                        <div class="project-tech" role="list" aria-label="Technologies used">
+                            <span class="tech-tag" role="listitem">Azure DevOps</span>
+                            <span class="tech-tag" role="listitem">PowerShell</span>
+                            <span class="tech-tag" role="listitem">SQL</span>
+                            <span class="tech-tag" role="listitem">Team Leadership</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- 
+        SKILLS SECTION
+        Visual representation of technical expertise.
+        Progress bars animate when scrolled into view.
+        -->
+        <section class="skills" aria-label="Technical skills">
+            <h2>Technical Arsenal & Expertise</h2>
+            <div class="skills-container">
+                <!-- Cloud & Enterprise Platforms -->
+                <div class="skill-category">
+                    <h3>Cloud & Enterprise Platforms</h3>
+                    <!-- Each skill has animated progress bar -->
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AWS & Azure</span>
+                            <span aria-label="90 percent proficiency">90%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 90%; --index: 0"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Salesforce & CRM Integration</span>
+                            <span aria-label="95 percent proficiency">95%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 95%; --index: 1"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Citrix NetScaler & Networking</span>
+                            <span aria-label="85 percent proficiency">85%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 85%; --index: 2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Automation & Development -->
+                <div class="skill-category">
+                    <h3>Automation & Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PowerShell (8+ Solutions Built)</span>
+                            <span aria-label="95 percent proficiency">95%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 95%; --index: 3"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python, FastAPI, REST APIs</span>
+                            <span aria-label="80 percent proficiency">80%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 80%; --index: 4"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>OpenAI GPT-4o & AI Integration</span>
+                            <span aria-label="75 percent proficiency">75%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 75%; --index: 5"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sales & Customer Success -->
+                <div class="skill-category">
+                    <h3>Sales Engineering & Success</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Technical Discovery & POCs</span>
+                            <span aria-label="95 percent proficiency">95%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 95%; --index: 6"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Executive Presentations & ROI</span>
+                            <span aria-label="90 percent proficiency">90%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 90%; --index: 7"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Global Team Leadership</span>
+                            <span aria-label="92 percent proficiency">92%</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                            <div class="skill-progress" style="--width: 92%; --index: 8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 
+        CONTACT SECTION
+        Clear call-to-action with multiple contact methods.
+        Update these links with your actual contact information.
+        -->
+        <section class="contact" id="contact" aria-label="Contact information">
+            <h2>Let's Turn Your "What's Next" into "What Works"</h2>
+            <p>Ready to see how proven customer success expertise can accelerate your sales cycles?</p>
+            <p style="font-size: 1rem; opacity: 0.8; margin-top: -1rem;">
+                Lead TAM → Sales Engineering | Bridging Technical Excellence with Business Impact
+            </p>
+            
+            <!-- Contact links - UPDATE THESE WITH YOUR ACTUAL LINKS -->
+            <nav class="contact-links" role="navigation" aria-label="Contact methods">
+                <a href="mailto:dan.deppert@outlook.com" 
+                   class="contact-link" 
+                   aria-label="Send email to dan.deppert@outlook.com">
+                    Email Me
+                </a>
+                <a href="https://linkedin.com/in/dandeppert" 
+                   class="contact-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="View LinkedIn profile">
+                    LinkedIn
+                </a>
+                <!-- Update this with your actual Calendly or booking link -->
+                <a href="https://calendly.com/dandeppert" 
+                   class="contact-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Schedule a meeting">
+                    Schedule a Call
+                </a>
+                <a href="https://autara-focusbot-1.streamlit.app" 
+                   class="contact-link" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Try FocusBot Demo">
+                    Try FocusBot Live
+                </a>
+            </nav>
+        </section>
+    </main>
+    
+    <!-- 
+    JAVASCRIPT SECTION
+    All interactivity and animations are handled here.
+    Using modern ES6+ JavaScript with detailed comments.
+    -->
+    <script>
+        // Use strict mode for better error catching and performance
+        'use strict';
+        
+        /* ==========================================
+           PARTICLE GENERATION
+           Creates floating particles for visual effect
+           ========================================== */
+        
+        /**
+         * Generates floating particles in the hero section
+         * @param {number} count - Number of particles to generate
+         */
+        function generateParticles(count = 50) {
+            const particlesContainer = document.getElementById('particles');
+            
+            // Guard clause - exit if container doesn't exist
+            if (!particlesContainer) return;
+            
+            // Document fragment for better performance (single DOM update)
+            const fragment = document.createDocumentFragment();
+            
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random horizontal position
+                particle.style.left = `${Math.random() * 100}%`;
+                
+                // Random animation delay for natural movement
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+                
+                // Random animation duration (15-25 seconds)
+                particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+                
+                // Add to fragment instead of DOM (performance)
+                fragment.appendChild(particle);
+            }
+            
+            // Single DOM update
+            particlesContainer.appendChild(fragment);
+        }
+        
+        /* ==========================================
+           INTERSECTION OBSERVER
+           Triggers animations when elements come into view
+           ========================================== */
+        
+        /**
+         * Creates an Intersection Observer for scroll-triggered animations
+         * @returns {IntersectionObserver} Configured observer instance
+         */
+        function createScrollObserver() {
+            const observerOptions = {
+                threshold: 0.5,      // Trigger when 50% visible
+                rootMargin: '0px'    // No margin around viewport
+            };
+            
+            return new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        
+                        // Check if it's a metric number that needs animation
+                        if (target.classList.contains('metric-number')) {
+                            animateCounter(target);
+                            // Unobserve after animation to prevent re-triggering
+                            observer.unobserve(target);
+                        }
+                    }
+                });
+            }, observerOptions);
+        }
+        
+        /* ==========================================
+           COUNTER ANIMATION
+           Animates numbers from 0 to target value
+           ========================================== */
+        
+        /**
+         * Animates a counter from 0 to its target value
+         * @param {HTMLElement} element - The element containing the number
+         */
+        function animateCounter(element) {
+            // Get the target value from the element's text
+            const targetText = element.textContent;
+            const isPercentage = targetText.includes('%');
+            const isDollar = targetText.includes('
+        
+        /* ==========================================
+           SMOOTH SCROLL
+           Implements smooth scrolling for anchor links
+           ========================================== */
+        
+        /**
+         * Adds smooth scrolling behavior to all anchor links
+         */
+        function initSmoothScroll() {
+            // Select all links that start with #
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            
+            anchorLinks.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Get the href attribute
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's just "#"
+                    if (href === '#') return;
+                    
+                    // Prevent default jump behavior
+                    e.preventDefault();
+                    
+                    // Find the target element
+                    const target = document.querySelector(href);
+                    
+                    if (target) {
+                        // Smooth scroll to target
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL without jumping
+                        history.pushState(null, null, href);
+                    }
+                });
+            });
+        }
+        
+        /* ==========================================
+           PROJECT CARD INTERACTIONS
+           Adds 3D hover effects to project cards
+           ========================================== */
+        
+        /**
+         * Adds interactive hover effects to project cards
+         */
+        function initProjectCardEffects() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                // Mouse enter - add 3D tilt effect
+                card.addEventListener('mouseenter', function(e) {
+                    // Calculate mouse position relative to card
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Calculate rotation based on mouse position
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    // Apply 3D transform
+                    this.style.transform = `
+                        translateY(-10px) 
+                        scale(1.02) 
+                        rotateX(${rotateX}deg) 
+                        rotateY(${rotateY}deg)
+                    `;
+                });
+                
+                // Mouse leave - reset transform
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateX(0) rotateY(0)';
+                });
+                
+                // Mouse move - update tilt based on cursor position
+                card.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    
+                    this.style.transform = `
+                        translateY(-10px) 
+                        scale(1.02) 
+                        rotateX(${rotateX}deg) 
+                        rotateY(${rotateY}deg)
+                    `;
+                });
+            });
+        }
+        
+        /* ==========================================
+           PERFORMANCE MONITORING
+           Tracks page performance metrics
+           ========================================== */
+        
+        /**
+         * Logs performance metrics to console (development only)
+         */
+        function logPerformanceMetrics() {
+            // Only run in development (remove or comment out in production)
+            if (window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1') {
+                
+                // Wait for page to fully load
+                window.addEventListener('load', () => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    
+                    if (perfData) {
+                        console.log('Performance Metrics:');
+                        console.log(`DOM Content Loaded: ${perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart}ms`);
+                        console.log(`Page Load Time: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
+                        console.log(`Time to Interactive: ${perfData.domInteractive - perfData.fetchStart}ms`);
+                    }
+                });
+            }
+        }
+        
+        /* ==========================================
+           LAZY LOADING
+           Defers loading of non-critical resources
+           ========================================== */
+        
+        /**
+         * Implements lazy loading for images (when you add them)
+         */
+        function initLazyLoading() {
+            // Check if browser supports Intersection Observer
+            if ('IntersectionObserver' in window) {
+                const images = document.querySelectorAll('img[data-src]');
+                
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        }
+        
+        /* ==========================================
+           INITIALIZATION
+           Runs all setup functions when DOM is ready
+           ========================================== */
+        
+        /**
+         * Initialize all interactive features
+         */
+        function init() {
+            // Generate particles
+            generateParticles(50);
+            
+            // Set up scroll observer for animations
+            const scrollObserver = createScrollObserver();
+            
+            // Observe all metric numbers
+            document.querySelectorAll('.metric-number').forEach(element => {
+                scrollObserver.observe(element);
+            });
+            
+            // Initialize smooth scrolling
+            initSmoothScroll();
+            
+            // Initialize project card effects
+            initProjectCardEffects();
+            
+            // Set up lazy loading (for future images)
+            initLazyLoading();
+            
+            // Log performance metrics (development only)
+            logPerformanceMetrics();
+        }
+        
+        // Wait for DOM to be fully loaded before initializing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            // DOM already loaded (shouldn't happen with script at bottom, but safe)
+            init();
+        }
+        
+        /* ==========================================
+           ERROR HANDLING
+           Global error handler for debugging
+           ========================================== */
+        
+        window.addEventListener('error', (e) => {
+            // Log errors in development
+            if (window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1') {
+                console.error('Global error:', e.message, e.filename, e.lineno);
+            }
+        });
+        
+        /* ==========================================
+           GOOGLE ANALYTICS
+           Add your tracking ID here when ready
+           ========================================== */
+        
+        // Uncomment and add your GA tracking ID when ready
+        /*
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+        */
+    </script>
+    
+    <!-- 
+    OPTIONAL: Google Analytics
+    Uncomment and add your tracking ID when ready to go live
+    -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    -->
+</body>
+</html>);
+            const isPlus = targetText.includes('+');
+            
+            // Extract numeric value using regex
+            const numericValue = parseInt(targetText.replace(/[^0-9]/g, ''));
+            
+            // Animation settings
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const steps = 60;      // 60 frames for smooth animation
+            const increment = numericValue / steps;
+            const stepDuration = duration / steps;
+            
+            // Animation loop using setInterval
+            const timer = setInterval(() => {
+                current += increment;
+                
+                // Check if we've reached the target
+                if (current >= numericValue) {
+                    current = numericValue;
+                    clearInterval(timer);
+                }
+                
+                // Format the display value
+                let display = Math.floor(current);
+                if (isDollar) {
+                    display = `${display}M`;
+                } else if (isPercentage) {
+                    display = `${display}%`;
+                } else if (isPlus) {
+                    // Format with comma for thousands
+                    display = display.toLocaleString() + '+';
+                }
+                
+                // Update the element
+                element.textContent = display;
+            }, stepDuration);
+        }
+        
+        /* ==========================================
+           SMOOTH SCROLL
+           Implements smooth scrolling for anchor links
+           ========================================== */
+        
+        /**
+         * Adds smooth scrolling behavior to all anchor links
+         */
+        function initSmoothScroll() {
+            // Select all links that start with #
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            
+            anchorLinks.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    // Get the href attribute
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's just "#"
+                    if (href === '#') return;
+                    
+                    // Prevent default jump behavior
+                    e.preventDefault();
+                    
+                    // Find the target element
+                    const target = document.querySelector(href);
+                    
+                    if (target) {
+                        // Smooth scroll to target
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL without jumping
+                        history.pushState(null, null, href);
+                    }
+                });
+            });
+        }
+        
+        /* ==========================================
+           PROJECT CARD INTERACTIONS
+           Adds 3D hover effects to project cards
+           ========================================== */
+        
+        /**
+         * Adds interactive hover effects to project cards
+         */
+        function initProjectCardEffects() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                // Mouse enter - add 3D tilt effect
+                card.addEventListener('mouseenter', function(e) {
+                    // Calculate mouse position relative to card
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Calculate rotation based on mouse position
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    // Apply 3D transform
+                    this.style.transform = `
+                        translateY(-10px) 
+                        scale(1.02) 
+                        rotateX(${rotateX}deg) 
+                        rotateY(${rotateY}deg)
+                    `;
+                });
+                
+                // Mouse leave - reset transform
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1) rotateX(0) rotateY(0)';
+                });
+                
+                // Mouse move - update tilt based on cursor position
+                card.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    
+                    this.style.transform = `
+                        translateY(-10px) 
+                        scale(1.02) 
+                        rotateX(${rotateX}deg) 
+                        rotateY(${rotateY}deg)
+                    `;
+                });
+            });
+        }
+        
+        /* ==========================================
+           PERFORMANCE MONITORING
+           Tracks page performance metrics
+           ========================================== */
+        
+        /**
+         * Logs performance metrics to console (development only)
+         */
+        function logPerformanceMetrics() {
+            // Only run in development (remove or comment out in production)
+            if (window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1') {
+                
+                // Wait for page to fully load
+                window.addEventListener('load', () => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    
+                    if (perfData) {
+                        console.log('Performance Metrics:');
+                        console.log(`DOM Content Loaded: ${perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart}ms`);
+                        console.log(`Page Load Time: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
+                        console.log(`Time to Interactive: ${perfData.domInteractive - perfData.fetchStart}ms`);
+                    }
+                });
+            }
+        }
+        
+        /* ==========================================
+           LAZY LOADING
+           Defers loading of non-critical resources
+           ========================================== */
+        
+        /**
+         * Implements lazy loading for images (when you add them)
+         */
+        function initLazyLoading() {
+            // Check if browser supports Intersection Observer
+            if ('IntersectionObserver' in window) {
+                const images = document.querySelectorAll('img[data-src]');
+                
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+        }
+        
+        /* ==========================================
+           INITIALIZATION
+           Runs all setup functions when DOM is ready
+           ========================================== */
+        
+        /**
+         * Initialize all interactive features
+         */
+        function init() {
+            // Generate particles
+            generateParticles(50);
+            
+            // Set up scroll observer for animations
+            const scrollObserver = createScrollObserver();
+            
+            // Observe all metric numbers
+            document.querySelectorAll('.metric-number').forEach(element => {
+                scrollObserver.observe(element);
+            });
+            
+            // Initialize smooth scrolling
+            initSmoothScroll();
+            
+            // Initialize project card effects
+            initProjectCardEffects();
+            
+            // Set up lazy loading (for future images)
+            initLazyLoading();
+            
+            // Log performance metrics (development only)
+            logPerformanceMetrics();
+        }
+        
+        // Wait for DOM to be fully loaded before initializing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            // DOM already loaded (shouldn't happen with script at bottom, but safe)
+            init();
+        }
+        
+        /* ==========================================
+           ERROR HANDLING
+           Global error handler for debugging
+           ========================================== */
+        
+        window.addEventListener('error', (e) => {
+            // Log errors in development
+            if (window.location.hostname === 'localhost' || 
+                window.location.hostname === '127.0.0.1') {
+                console.error('Global error:', e.message, e.filename, e.lineno);
+            }
+        });
+        
+        /* ==========================================
+           GOOGLE ANALYTICS
+           Add your tracking ID here when ready
+           ========================================== */
+        
+        // Uncomment and add your GA tracking ID when ready
+        /*
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+        */
+    </script>
+    
+    <!-- 
+    OPTIONAL: Google Analytics
+    Uncomment and add your tracking ID when ready to go live
+    -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    -->
+</body>
+</html>
