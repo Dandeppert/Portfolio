@@ -42,7 +42,7 @@
     - CSS Grid and Flexbox for modern layouts
     - GPU-accelerated animations using transform and opacity
     -->
-    <style>
+    <link rel="stylesheet" href="style.css">
         /* ==========================================
            CSS RESET & CUSTOM PROPERTIES
            ========================================== */
@@ -277,6 +277,7 @@
             text-decoration: none;
             display: inline-block;
             /* Prevent text selection on buttons */
+            -webkit-user-select: none;
             user-select: none;
             /* Ensure touch targets are at least 44x44px for accessibility */
             min-height: 44px;
@@ -798,7 +799,7 @@
         @media (prefers-color-scheme: dark) {
             /* You could add dark mode overrides here if needed */
         }
-    </style>
+
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
@@ -820,7 +821,7 @@
             <div class="hero-content">
                 <h1>Dan Deppert</h1>
                 <p class="tagline">Turning What's Next into What Works</p>
-                <p style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-top: 0.5rem;">
+                <p class="p-white70">
                     Lead TAM → Sales Engineering | 13+ Years Enterprise Success
                 </p>
                 
@@ -844,19 +845,19 @@
         <section class="metrics" aria-label="Key achievements">
             <div class="metrics-grid">
                 <!-- Each metric card has a CSS variable for animation delay -->
-                <div class="metric-card" style="--index: 0">
+                <div class="metric-card" data-index="0">
                     <span class="metric-number" data-target="45" aria-label="45 million dollars">$45M</span>
                     <span class="metric-label">Enterprise Portfolio Managed</span>
                 </div>
-                <div class="metric-card" style="--index: 1">
+                <div class="metric-card" data-index="1">
                     <span class="metric-number" data-target="1400" aria-label="1400 plus">1,400+</span>
                     <span class="metric-label">Hours Saved Annually</span>
                 </div>
-                <div class="metric-card" style="--index: 2">
+                <div class="metric-card" data-index="2">
                     <span class="metric-number" data-target="97" aria-label="97 percent">97%</span>
                     <span class="metric-label">Retention (Zero Churn 2 Years)</span>
                 </div>
-                <div class="metric-card" style="--index: 3">
+                <div class="metric-card" data-index="3">
                     <span class="metric-number" data-target="86" aria-label="86 percent">86%</span>
                     <span class="metric-label">Case Closure Time Reduction</span>
                 </div>
@@ -1017,8 +1018,8 @@
                             <span>AWS & Azure</span>
                             <span aria-label="90 percent proficiency">90%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 90%; --index: 0"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" title="AWS & Azure proficiency 90%">
+                            <div class="skill-progress" data-index="0" data-width="90%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1026,8 +1027,8 @@
                             <span>Salesforce & CRM Integration</span>
                             <span aria-label="95 percent proficiency">95%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 95%; --index: 1"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" title="Salesforce & CRM Integration proficiency 95%">
+                            <div class="skill-progress" data-index="1" data-width="95%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1035,8 +1036,8 @@
                             <span>Citrix NetScaler & Networking</span>
                             <span aria-label="85 percent proficiency">85%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 85%; --index: 2"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" title="Citrix NetScaler & Networking proficiency 85%">
+                            <div class="skill-progress" data-index="2" data-width="85%"></div>
                         </div>
                     </div>
                 </div>
@@ -1049,8 +1050,8 @@
                             <span>PowerShell (8+ Solutions Built)</span>
                             <span aria-label="95 percent proficiency">95%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 95%; --index: 3"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" title="PowerShell proficiency 95%">
+                            <div class="skill-progress" data-index="3" data-width="95%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1058,8 +1059,8 @@
                             <span>Python, FastAPI, REST APIs</span>
                             <span aria-label="80 percent proficiency">80%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 80%; --index: 4"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" title="Python, FastAPI, REST APIs proficiency 80%">
+                            <div class="skill-progress" data-index="4" data-width="80%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1067,8 +1068,8 @@
                             <span>OpenAI GPT-4o & AI Integration</span>
                             <span aria-label="75 percent proficiency">75%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 75%; --index: 5"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" title="OpenAI GPT-4o & AI Integration proficiency 75%">
+                            <div class="skill-progress" data-index="5" data-width="75%"></div>
                         </div>
                     </div>
                 </div>
@@ -1081,8 +1082,8 @@
                             <span>Technical Discovery & POCs</span>
                             <span aria-label="95 percent proficiency">95%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 95%; --index: 6"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" title="Technical Discovery & POCs proficiency 95%">
+                            <div class="skill-progress" data-index="6" data-width="95%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1090,8 +1091,8 @@
                             <span>Executive Presentations & ROI</span>
                             <span aria-label="90 percent proficiency">90%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 90%; --index: 7"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" title="Executive Presentations & ROI proficiency 90%">
+                            <div class="skill-progress" data-index="7" data-width="90%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1099,8 +1100,8 @@
                             <span>Global Team Leadership</span>
                             <span aria-label="92 percent proficiency">92%</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                            <div class="skill-progress" style="--width: 92%; --index: 8"></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" title="Global Team Leadership proficiency 92%">
+                            <div class="skill-progress" data-index="8" data-width="92%"></div>
                         </div>
                     </div>
                 </div>
@@ -1115,7 +1116,7 @@
         <section class="contact" id="contact" aria-label="Contact information">
             <h2>Let's Turn Your "What's Next" into "What Works"</h2>
             <p>Ready to see how proven customer success expertise can accelerate your sales cycles?</p>
-            <p style="font-size: 1rem; opacity: 0.8; margin-top: -1rem;">
+            <p class="p-rem1">
                 Lead TAM → Sales Engineering | Bridging Technical Excellence with Business Impact
             </p>
             
@@ -1244,46 +1245,43 @@
             // Get the target value from the element's text
             const targetText = element.textContent;
             const isPercentage = targetText.includes('%');
-            const isDollar = targetText.includes('
-        
-        /* ==========================================
-           SMOOTH SCROLL
-           Implements smooth scrolling for anchor links
-           ========================================== */
-        
-        /**
-         * Adds smooth scrolling behavior to all anchor links
-         */
-        function initSmoothScroll() {
-            // Select all links that start with #
-            const anchorLinks = document.querySelectorAll('a[href^="#"]');
-            
-            anchorLinks.forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    // Get the href attribute
-                    const href = this.getAttribute('href');
-                    
-                    // Skip if it's just "#"
-                    if (href === '#') return;
-                    
-                    // Prevent default jump behavior
-                    e.preventDefault();
-                    
-                    // Find the target element
-                    const target = document.querySelector(href);
-                    
-                    if (target) {
-                        // Smooth scroll to target
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Update URL without jumping
-                        history.pushState(null, null, href);
-                    }
-                });
-            });
+            const isDollar = targetText.includes('$');
+            const isPlus = targetText.includes('+');
+
+            // Extract numeric value using regex
+            const numericValue = parseInt(targetText.replace(/[^0-9]/g, ''));
+
+            // Animation settings
+            let current = 0;
+            const duration = 2000; // 2 seconds
+            const steps = 60;      // 60 frames for smooth animation
+            const increment = numericValue / steps;
+            const stepDuration = duration / steps;
+
+            // Animation loop using setInterval
+            const timer = setInterval(() => {
+                current += increment;
+
+                // Check if we've reached the target
+                if (current >= numericValue) {
+                    current = numericValue;
+                    clearInterval(timer);
+                }
+
+                // Format the display value
+                let display = Math.floor(current);
+                if (isDollar) {
+                    display = `${display}M`;
+                } else if (isPercentage) {
+                    display = `${display}%`;
+                } else if (isPlus) {
+                    // Format with comma for thousands
+                    display = display.toLocaleString() + '+';
+                }
+
+                // Update the element
+                element.textContent = display;
+            }, stepDuration);
         }
         
         /* ==========================================
@@ -1467,11 +1465,7 @@
         gtag('js', new Date());
         gtag('config', 'GA_TRACKING_ID');
         */
-    </script>
-    
-    <!-- 
-    OPTIONAL: Google Analytics
-    Uncomment and add your tracking ID when ready to go live
+    <script src="main.js"></script>
     -->
     <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>

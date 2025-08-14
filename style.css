@@ -1,0 +1,36 @@
+/* External CSS for Main.html fixes */
+
+/* Style for metric-card index */
+.metric-card[data-index="0"] { --index: 0; }
+.metric-card[data-index="1"] { --index: 1; }
+.metric-card[data-index="2"] { --index: 2; }
+.metric-card[data-index="3"] { --index: 3; }
+
+/* Style for skill-progress width and index */
+.skill-progress[data-index="0"] { --width: 90%; --index: 0; }
+.skill-progress[data-index="1"] { --width: 95%; --index: 1; }
+.skill-progress[data-index="2"] { --width: 85%; --index: 2; }
+.skill-progress[data-index="3"] { --width: 95%; --index: 3; }
+.skill-progress[data-index="4"] { --width: 80%; --index: 4; }
+.skill-progress[data-index="5"] { --width: 75%; --index: 5; }
+.skill-progress[data-index="6"] { --width: 95%; --index: 6; }
+.skill-progress[data-index="7"] { --width: 90%; --index: 7; }
+.skill-progress[data-index="8"] { --width: 92%; --index: 8; }
+
+/* Style for paragraphs */
+.p-white70 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+.p-rem1 {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: -1rem;
+}
+
+/* Fix for backdrop-filter */
+.blur-bg {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
